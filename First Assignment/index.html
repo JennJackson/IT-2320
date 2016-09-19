@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<link rel="icon" type="image/png" href="wow_icon.png"/>
+	<title>WoW Class Randomizer</title>
+	
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+</head>
+<body>
+
+	<script src="scripts.js"></script>
+	
+	<div class="backgroundStyle">
+	
+		<div class="title">World of Warcraft Class Randomizer</div>		
+		
+		<div class="mainStyle">
+		
+			<div class="mainHeader">Deciding What to Play</div>
+			
+			<div class="standardParagraph">Choosing a class to play can be a challenging endeavor, especially if you like to play all sorts of roles. Can't decide? Let this randomizer decide for you.</div>
+			
+			<div class="subHeader">Choose your faction:</div>
+		
+			<div class="standardParagraph">Alliance or Horde? You can choose a side if you are already established in that faction, or you can let the randomizer decide for you.</div>
+			
+			<div class="buttonPlacement">
+				<button type="button" onclick="document.getElementById('factionText').innerHTML= 'Alliance'">Alliance</button>
+				<button type="button" onclick="document.getElementById('factionText').innerHTML= 'Horde'">Horde</button>
+				<button type="button" onclick="RandomFaction()">Random</button>
+			</div>
+				
+			<div class="subHeader">Choose your class and specialization:</div>
+			
+			<div class="standardParagraph">Click the Randomizer button to get your class and specialization!</div>
+			
+			<div class="buttonPlacement">
+				<button type="button" onclick="RandomClassAndSpec()">Randomizer</button>
+			</div>
+		</div>	
+		
+		<div class="mainStyle">
+			<div id="factionText" class="standardParagraph largerText">[Faction]</div>
+			<div id="classAndSpecText" class="standardParagraph largerText">[Class & Specialization]</div>
+		</div>
+	</div>
+	
+		
+</body>
+</html>
