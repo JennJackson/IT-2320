@@ -1,0 +1,42 @@
+.headers
+{	
+	font-weight: bold;
+	width: 198px;
+	display: inline;
+	float: left;
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+	margin-right: 20px;
+	padding-bottom: 5px;
+}
+
+.headerLast
+{
+	
+	font-weight: bold;
+	width: 600px;
+	margin-left: 20px;
+	padding-bottom: 5px;
+	border-bottom: 3px solid black;
+}
+
+.firstColumns
+{
+	width: 200px;
+	display: inline;
+	float: left;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	margin-right: 20px;
+	padding-bottom: 10px;
+	
+}
+
+.lastColumn
+{
+	width: 600px;
+	margin-left: 20px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid black;
+
+}
