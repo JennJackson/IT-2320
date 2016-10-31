@@ -1,0 +1,190 @@
+body
+{
+	background-color: #2B2B2B;
+}
+
+.backgroundStyle
+{
+	background-color: gray;
+	border-style: solid;	
+}
+
+.title
+{
+	
+	font-weight: 600;
+	background: #BFBFBF;
+	border-style: solid;	
+	border-color: black;	
+	text-align: center;
+}
+
+.mainStyle
+{
+	
+	border-style:solid;	
+	background-color: #BFBFBF;
+}
+
+.mainHeader
+{
+	font-weight:bold;
+	border-bottom-style: solid;	
+	background-color: #E3E3E3;
+}
+
+.subHeader
+{	
+	font-weight:bold;
+	border-bottom-style: solid;	
+	background-color: #E3E3E3;
+}
+
+
+@media screen and (min-width: 400px)
+{	
+	.backgroundStyleSize
+	{
+		border-width: 5px;
+		margin: 20px;
+		min-width: 900px;
+		max-width: 1000px;
+		min-height: 700px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.titleSize
+	{
+		font-size: 40px;
+		border-width: 5px;
+		margin-top: 10px;
+		margin-bottom: 20px;
+		max-width:850px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.mainStyleSize
+	{
+		border-width: 3px;
+		max-width: 800px;
+		margin: 10px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	
+	.mainHeaderSize
+	{
+		font-size:30px;
+		width: 100%;
+		padding-top: 10px;
+		margin-bottom: 20px;
+	}
+	
+	
+	.subHeaderSize
+	{
+		font-size:20px;
+		width: 100%;
+		margin-top: 20px;
+		margin-bottom:10px;
+	}
+	
+	.standardParagraph
+	{
+		font-size: 16px;
+		margin: 5px;	
+	}
+	
+	.largerText
+	{
+		font-size:30px;
+	}
+	
+	.buttonPlacement
+	{
+		margin: 15px;
+	}
+	
+	.buttonStyle
+	{
+		width: 150px;
+		height: 50px;
+	}
+}
+
+@media screen and (max-width: 399px)
+{	
+	.backgroundStyleSize
+	{
+		border-width: 5px;
+		margin: 20px;
+		min-width: 300px;
+		min-height: 450px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.titleSize
+	{
+		font-size: 20px;
+		width: 285px;
+		border-width: 3px;
+		margin-top: 10px;
+		margin-bottom: 20px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.mainStyleSize
+	{
+		border-width: 3px;
+		width: 285px;
+		margin: 10px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	
+	.mainHeaderSize
+	{
+		text-align: center;
+		font-size:28px;
+		width: 100%;
+		padding-top: 10px;
+		margin-bottom: 20px;
+	}
+	
+	
+	.subHeaderSize
+	{
+		font-size:20px;
+		width: 100%;
+		margin-top: 20px;
+		margin-bottom:10px;
+	}
+	
+	.standardParagraph
+	{
+		font-size: 16px;
+		margin: 5px;	
+	}
+	
+	.largerText
+	{
+		font-size:25px;
+	}
+	
+	.buttonPlacement
+	{		
+		margin: 15px;
+	}
+	
+	.buttonStyle
+	{
+		width: 255px;
+		height: 50px;
+	}
+}
