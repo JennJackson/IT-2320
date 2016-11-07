@@ -1,1 +1,99 @@
-﻿
+﻿.PageContainer {
+    width: 520px;
+    height: 100%;
+}
+
+.HeaderTitle 
+{
+    font: 16px Cambria, serif;
+    font-weight: bold;
+    margin: 10px;
+    margin-left: 5px;
+}
+
+.HeaderContent {
+    font: 12px Cambria, serif;
+    font-style: italic;
+    margin: 5px;
+}
+
+.MainContent
+{
+    font: 12px Calibri, sans-serif;
+    height: 300px;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.LeftHalfContent 
+{
+    float: left;
+    width: 50%;
+}
+
+.RightHalfContent 
+{
+    float: right;
+    width: 50%;
+}
+
+.Left40Content 
+{
+    float: left;
+    width: 40%;
+}
+
+.Right60Content 
+{
+    float: right;
+    width: 60%;
+}
+
+
+.LoginContent 
+{
+    width: 100%;
+    height: 33%;
+}
+
+.TextBox 
+{
+    width: 160px;
+}
+
+.LoginLabel 
+{
+    width: 30%;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.LoginLabelMoreSpace 
+{
+    width: 42%
+}
+
+.LoginInfoRow 
+{
+    margin-top: 5px;
+    margin-bottom: 2.5px;
+}
+
+.SubmitButton 
+{
+    float: right;
+    margin: 15px;
+    width: 110px;
+}
+
+.CreateAccountContent {
+    width: 100%;
+    border-top: 1px solid black;
+    height: 66%;
+}
+
+.FooterContent 
+{
+    font: 12px Calibri, sans-serif;
+    margin: 5px;
+}
