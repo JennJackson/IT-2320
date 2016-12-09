@@ -15,7 +15,7 @@
     <div id="PageContainerDiv" class="PageContainer">
         <header>
             <div id="HeaderDiv">
-                <div id="HeaderTitleDiv" class="HeaderTitle">Welcome to Cuyahoga Community College Student Services Online</div>
+                <div id="HeaderTitleDiv" class="HeaderTitle BigText">Welcome to Cuyahoga Community College Student Services Online</div>
                 <div id="HeaderContentDiv" class="HeaderContent">
                     Cuyahoga Community College recognizes students' rights to access
                     personal and academic records in accordance with the Family Educational Rights and Privacy Act of 1974 (FERPA)
@@ -24,45 +24,95 @@
             </div>
         </header>
 
-        <div id="LoginMainDiv" class="MainContent">
+        <div id="LoginMainDiv" class="MainContent MainContentHeight">
             <div id="LoginDiv" class="LoginContent">
+                <div id="TopMobileLoginDiv" class="BigText">
+                    Log In
+                </div>
                 <div id="LeftLoginDiv" class="LeftHalfContent">
-                    Already have an account with us? Returning users may log in by entering their site username and password.
+                    <div id="LoginInfoDiv" class="LeftInfoContent">
+                        Already have an account with us? Returning users may log in by entering their site username and password.
+                    </div>
                 </div>
                 <div id="RightLoginDiv" class="RightHalfContent">
                     <div id="ExistingUsernameDiv" class="LoginInfoRow">
                         <div class="LoginLabel">Username: </div>
-                        <input type="text" class="TextBox" />
+                        <input type="text" id="ExistingUsername" class="TextBox AdditionalLength" />
                     </div>
+                    <div id="ExistingUsernameError" class="ErrorText"> Error Text here.</div>
                     <div id="ExistingPasswordDiv" class="LoginInfoRow">
                         <div class="LoginLabel">Password: </div>
-                        <input type="text" class="TextBox" />
+                        <input type="password" id="ExistingPassword" class="TextBox AdditionalLength" />
                     </div>
+                    <div id="ExistingPasswordError" class="ErrorText"> Error Text here.</div>
                     <button type="button" id="LoginButtonDiv" class="SubmitButton">Log In</button>
                 </div>
             </div>
             <div id="CreateAccountDiv" class="CreateAccountContent">
+                <div id="CAInfoDiv" class="BigText">
+                    Create New Account
+                </div>
                 <div id="LeftCADiv" class="Left40Content">
                     New users, please create a new account by providing us with some basic information.
                 </div>
                 <div id="RightCADiv" class="Right60Content">
                     <div id="CAUsernameDiv" class="LoginInfoRow">
                         <div class="LoginLabel LoginLabelMoreSpace">Username: </div>
-                        <input type="text" class="TextBox" />
+                        <input type="text" id="CAUsername" class="TextBox" />
                     </div>
+                    <div id="CAUsernameError" class="ErrorText"> Error Text here.</div>
                     <div id="CAPasswordDiv" class="LoginInfoRow">
                         <div class="LoginLabel LoginLabelMoreSpace">Password: </div>
-                        <input type="text" class="TextBox" />
+                        <input type="password" id="CAPassword" class="TextBox" />
                     </div>
+                    <div id="CAPasswordError" class="ErrorText"> Error Text here.</div>
                     <div id="CAEmailDiv" class="LoginInfoRow">
                         <div class="LoginLabel LoginLabelMoreSpace">E-Mail Address: </div>
-                        <input type="text" class="TextBox" />
+                        <input type="text" id="CAEmail" class="TextBox" />
                     </div>
+                    <div id="CAEmailError" class="ErrorText"> Error Text here.</div>
                     <div id="CAEmail2Div" class="LoginInfoRow">
                         <div class="LoginLabel LoginLabelMoreSpace">Repeat E-Mail Address: </div>
-                        <input type="text" class="TextBox" />
+                        <input type="text" id="CAEmail2" class="TextBox" />
                     </div>
+                    <div id="CAEmail2Error" class="ErrorText"> Error Text here.</div>
                     <button type="button" id="CAButtonDiv" class="SubmitButton">Create Account</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="AIMainDiv" class="MainContent">
+            <div id="DisplayInfoArea" style="border: 1px solid turquoise; border-radius: 15px; padding:10px; margin-left: auto; margin-right: auto; width: 415px;">
+                <div id="DisplayName" style="border-right:1px solid darkcyan; display: inline-block; padding-right: 10px;">
+                    <div id="DisplayAccountNameLabel" style="height: 22px; padding-top: 5px; padding-bottom: 5px; font-weight: bold;">Account Name</div>
+                    <div id="DisplayEmailAddressLabel" style="height: 22px; padding-top: 5px; padding-bottom: 5px;">Email Address</div>
+                    <div id="DisplayCurrentGPALabel" style="height: 22px; padding-top: 5px; padding-bottom: 5px;">Current GPA</div>
+                </div>
+                <div id="DisplayDescription" style="display: inline-block; padding-left: 10px;">
+                    <div id="DisplayAccountNameText" style="height: 22px; padding-top: 5px; padding-bottom: 5px;">Jennifer Jackson</div>
+                    <div style="padding-top: 5px; padding-bottom: 5px;">
+                        <input type="text" id="DisplayEmailAddressText" class="TextBox">
+                        <button type="button" id="DisplayEmailAddressButton" class="SubmitButton">Update</button>
+                    </div>
+                    <div style="padding-top: 5px; padding-bottom: 5px;">
+                        <input type="text" id="DisplayCurrentGPAText" class="TextBox">
+                        <button type="button" id="DisplayCurrentGPAButton" class="SubmitButton">Update</button>
+                    </div>
+                </div>
+            </div>
+            <div id="AddElementArea" style="margin-top: 15px; padding: 10px; margin-left: auto; margin-right: auto; width: 415px;">
+                <div style="width: 250px; margin-right: auto; margin-left: auto;">
+                    <div id="ElementNameDiv" style="height: 22px; padding-top: 5px; padding-bottom: 5px;">
+                        <div id="ElementNameLabel" style="display: inline-block;">Element Name</div>
+                        <input type="text" id="ElementNameTextBox" class="TextBox" style="float: right;">
+                    </div>
+                    <div id="ElementValueDiv" style="height: 22px; padding-top: 5px; padding-bottom: 5px;">
+                        <div id="ElementValueLabel" style="display: inline-block;">Element Value</div>
+                        <input type="text" id="ElementValueTextBox" class="TextBox" style="float: right;">
+                    </div>
+                    <div>
+                        <button type="button" id="AddElementButton" class="SubmitButton" style="float: none;">Add</button>
+                    </div>
                 </div>
             </div>
         </div>
