@@ -11,10 +11,8 @@ var user = {
     gpa: "4.0"
 };
 
-Client.Elements = {}
-
-Client.ClearMessages = function ()
-{
+Client.Elements = {};
+Client.ClearMessages = function() {
     $("#ExistingUsernameError").removeAttr("style");
     $("#ExistingPasswordError").removeAttr("style");
     $("#CAUsernameError").removeAttr("style");
@@ -23,25 +21,21 @@ Client.ClearMessages = function ()
     $("#CAEmail2Error").removeAttr("style");
     $("#CASuccess").removeAttr("style");
     $("#ErrorMessageArea").removeAttr("style");
-}
-
-Client.ClearValues = function ()
-{
+};
+Client.ClearValues = function() {
     $("#CAUsername").val("");
     $("#CAPassword").val("");
     $("#CAEmail").val("");
     $("#CAEmail2").val("");
-}
-
-Client.AnimateLogin = function ()
-{
+};
+Client.AnimateLogin = function() {
     $("#LoginMainDiv").animate({
         opacity: 0.5,
         left: "-=550",
         height: "toggle"
-    }, 500, function () {
+    }, 500, function() {
         // Animation complete.
-        $("#AIMainDiv").show("slow", function () {
+        $("#AIMainDiv").show("slow", function() {
             $("#AIMainDiv").animate({
                 left: "-=520"
                 // Animation complete.
@@ -49,10 +43,8 @@ Client.AnimateLogin = function ()
             // Animation complete.
         });
     });
-}
-
-Client.CallLogin = function ()
-{
+};
+Client.CallLogin = function() {
     Client.ClearMessages();
 
     var usernameInput = $("#ExistingUsername").val();
@@ -66,34 +58,25 @@ Client.CallLogin = function ()
             Username: usernameInput,
             Password: passwordInput
         },
-        success: function (result)
-        {
+        success: function(result) {
             var resultString = JSON.parse(result);
 
-            if (resultString.Message === "Success")
-            {
+            if (resultString.Message === "Success") {
                 userInfoLoaded = true;
                 Client.CallGetAccountInformation(usernameInput);
 
                 Client.AnimateLogin();
-            }
-            else
-            {
-                if (resultString.Username === "Invalid")
-                {
+            } else {
+                if (resultString.Username === "Invalid") {
                     $("#ExistingUsernameError").css("visibility", "visible");
-                }
-                else
-                {
+                } else {
                     $("#ExistingPasswordError").css("visibility", "visible");
                 }
             }
         }
     });
-}
-
-Client.CallCreateAccount = function ()
-{
+};
+Client.CallCreateAccount = function() {
     Client.ClearMessages();
 
     var usernameInput = $("#CAUsername").val();
@@ -111,50 +94,35 @@ Client.CallCreateAccount = function ()
             EmailAdd: emailInput,
             EmailCon: emailInput2
         },
-        success: function (result)
-        {
+        success: function(result) {
             var resultString = JSON.parse(result);
 
-            if (resultString.Message === "Success")
-            {
+            if (resultString.Message === "Success") {
                 Client.ClearValues();
 
                 $("#CASuccess").css("visibility", "visible");
-            }
-            else
-            {
-                if (resultString.Username === "Invalid")
-                {
+            } else {
+                if (resultString.Username === "Invalid") {
                     $("#CAUsernameError").text("Username must have at least 6 characters.");
                     $("#CAUsernameError").css("visibility", "visible");
-                }
-                else if (resultString.Username === "Exists")
-                {
+                } else if (resultString.Username === "Exists") {
                     $("#CAUsernameError").text("Username is already taken.");
                     $("#CAUsernameError").css("visibility", "visible");
-                }
-                else if (resultString.Password === "Invalid")
-                {
+                } else if (resultString.Password === "Invalid") {
                     $("#CAPasswordError").css("visibility", "visible");
-                }
-                else if (resultString.EmailAdd === "Invalid")
-                {
+                } else if (resultString.EmailAdd === "Invalid") {
                     $("#CAEmailError").css("visibility", "visible");
-                }
-                else
-                {
+                } else {
                     $("#CAEmail2Error").css("visibility", "visible");
                 }
             }
         }
     });
-}
-
-Client.WriteElements = function () {
+};
+Client.WriteElements = function() {
     var elementHtml = "";
 
-    $.each(Object.keys(Client.Elements), function (index, element)
-    {
+    $.each(Object.keys(Client.Elements), function(index, element) {
         //Create HTML for each element and append to placeholder
         elementHtml += "<div>";
         elementHtml += "    <div id='" + element + "Label' elementName='" + element + "' class='InlineBlock LineHeight SmallPadding BiggerText ExtraWidth'>" + element + "</div>";
@@ -167,18 +135,15 @@ Client.WriteElements = function () {
 
     $('#PlaceHolderDiv').html(elementHtml);
 
-    $.each(Object.keys(Client.Elements), function (index, elementKey)
-    {
+    $.each(Object.keys(Client.Elements), function(index, elementKey) {
         $('#' + elementKey + 'TextBox').val(Client.Elements[elementKey]);
     });
 
-    $(".MobileButtonAI").click(function (sender, args) {
+    $(".MobileButtonAI").click(function(sender, args) {
         Client.CallAddOrUpdateElement(user.username, $('#' + sender.toElement.id));
     });
-}
-
-Client.CallGetAccountInformation = function (usernameInput)
-{
+};
+Client.CallGetAccountInformation = function(usernameInput) {
     $.ajax
     ({
         url: Client.BaseURL + "/Home/GetAccountInformation",
@@ -186,17 +151,15 @@ Client.CallGetAccountInformation = function (usernameInput)
         {
             Username: usernameInput
         },
-        success: function (result)
-        {
+        success: function(result) {
             var resultString = JSON.parse(result);
 
-            if (resultString.Message === "Success")
-            {
+            if (resultString.Message === "Success") {
                 var payload = JSON.parse(resultString.Payload);
-                
+
                 user.username = payload.account.username;
                 user.password = payload.account.password;
-                
+
                 $("#AccountNameLabel").text(user.username);
 
                 $.each(Object.keys(payload.account), function(index, elementKey) {
@@ -205,39 +168,32 @@ Client.CallGetAccountInformation = function (usernameInput)
                     }
                 });
                 Client.WriteElements();
-            }
-            else
-            {
+            } else {
                 alert("Error retrieving account info.");
             }
         }
     });
-}
-
-Client.CallAddOrUpdateElement = function (username, sender) {
+};
+Client.CallAddOrUpdateElement = function(username, sender) {
     Client.ClearMessages();
 
     var updatedElementName;
     var updatedElementValue;
 
-    if (sender.attr("purpose") === "add")
-    {
+    if (sender.attr("purpose") === "add") {
         //read element name from name box
         updatedElementName = $("#ElementNameTextBox").val().toLowerCase();
         //read element value from value box
         updatedElementValue = $("#ElementValueTextBox").val().toLowerCase();
 
-    }
-    else
-    {
+    } else {
         //read element name from update button attr (sender)
         updatedElementName = sender.attr("elementName");
         //retrieve element value by reading the value of the associated textbox
         updatedElementValue = $("#" + updatedElementName + "TextBox").val().toLowerCase();
     }
 
-    if (updatedElementName !== "" && updatedElementValue !== "")
-    {
+    if (updatedElementName !== "" && updatedElementValue !== "") {
         $.ajax
         ({
             url: Client.BaseURL + "/Home/AddOrUpdateElement",
@@ -251,7 +207,7 @@ Client.CallAddOrUpdateElement = function (username, sender) {
                 var resultString = JSON.parse(result);
 
                 if (resultString.Message === "Success") {
-                    
+
                     Client.Elements[updatedElementName] = updatedElementValue;
                     Client.WriteElements();
                 } else {
@@ -264,15 +220,12 @@ Client.CallAddOrUpdateElement = function (username, sender) {
         $("#ErrorMessageArea").text("Values must be filled out in order to add or update.");
         $("#ErrorMessageArea").css("visibility", "visible");
     }
-}
-
-$(document).ready(function ()
-{
+};
+$(document).ready(function() {
     $("#LoginButtonDiv").click(Client.CallLogin);
     $("#CAButtonDiv").click(Client.CallCreateAccount);
 
-    $(".MobileButtonAI").click(function (sender, args)
-    {
+    $(".MobileButtonAI").click(function(sender, args) {
         Client.CallAddOrUpdateElement(user.username, $('#' + sender.toElement.id));
     });
 });
