@@ -4,7 +4,6 @@
 {
     .PageContainer 
     {
-    width: 520px;
     height: 99%;
     }
 
@@ -21,6 +20,7 @@
         font: 12px Cambria, serif;
         font-style: italic;
         margin: 5px;
+        width: 520px;
     }
     
     .MainContent
@@ -35,6 +35,8 @@
     .MainContentHeight 
     {
         height: 375px;
+        width: 470px;
+        position: relative;
     }
     
     .LeftHalfContent 
@@ -78,6 +80,18 @@
         height: 0px;
         width: 0px;
     }
+
+    .MainContentFix {
+        width: 470px; 
+        display: none; 
+        position: relative; 
+        left: 520px; 
+        min-height: 375px;
+    }
+
+    .ExtraWidth {
+        width: 120px;
+    }
     
     .TextBox 
     {
@@ -104,10 +118,19 @@
     }
 
     .ErrorText 
-    {
-        margin-left: 50%; 
-        visibility: hidden;
+    { 
         color: red;
+        font-weight: bold;
+    }
+
+    .Hidden 
+    {
+        visibility: hidden;
+    }
+
+    .SuccessText 
+    {
+        color: green;
         font-weight: bold;
     }
     
@@ -142,6 +165,9 @@
     {
         font: 12px Calibri, sans-serif;
         margin: 5px;
+        position: fixed; 
+        left: 5px; 
+        bottom: 5px;
     }
 }
 
@@ -150,7 +176,6 @@
 {
     .PageContainer 
     {
-        width: 292px;
         height: 99%;
     }
 
@@ -159,6 +184,17 @@
         margin: 10px;
         margin-left: 5px;
         text-align: center;
+    }
+
+    .ExtraWidth {
+        width: 120px;
+    }
+
+    .MainContentFix {
+        display: none;
+        position: relative;
+        left: 520px;
+        min-height: 375px;
     }
 
     .BigText 
@@ -186,6 +222,8 @@
     .MainContentHeight 
     {
         height: 450px;
+        width: 242px;
+        position: relative;
     }
     
     .LeftHalfContent 
@@ -239,16 +277,19 @@
 
     .ErrorText 
     {
-        margin-left: 50%;
+        margin-left: 10%;
         color: red;
         font-weight: bold;
-        float: right;
+        float: right;        
+    }
+
+    .Hidden
+    {
         visibility: hidden;
     }
     
     .SubmitButton 
     {
-        margin: 15px;
         width: 230px;
         height: 40px;
         background-color: darkcyan;
@@ -265,7 +306,8 @@
         color: black;
     }
     
-    .CreateAccountContent {
+    .CreateAccountContent 
+    {
         width: 100%;
         border-top: 2px solid turquoise;
         padding-top: 20px;
@@ -276,11 +318,144 @@
     {
         font: 12px Calibri, sans-serif;
         margin: 5px;
+        position: fixed; 
+        left: 5px; 
+        bottom: 5px;
     }
 }
 
 
 /*Account Info*/
 /*Desktop*/
+@media screen and (min-width: 321px) {
+    .Centered {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .InnerBorder {
+        border: 1px solid turquoise;
+        border-radius: 15px;
+        padding: 10px;
+        width: 415px;
+    }
+
+    .LeftSideWithRightBorder {
+        border-right: 1px solid darkcyan;
+        display: inline-block;
+        padding-right: 10px;
+    }
+
+    .LineHeight {
+        height: 22px;
+    }
+
+    .Bold {
+        font-weight: bold;
+    }
+
+    .SmallPadding {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .RightSideDisplay {
+        padding-left: 10px;
+    }
+
+    #AddElementArea {
+        margin-top: 15px;
+        padding: 10px;
+        width: 415px;
+    }
+
+    #InnerAddElementArea {
+        width: 250px;
+    }
+
+    .InlineBlock {
+        display: inline-block;
+    }
+
+    .FloatRight {
+        float: right;
+    }
+
+    .FloatNone {
+        float: none;
+    }
+}
 
 /*Mobile*/
+@media screen and (max-width: 320px) {
+    .Centered {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .InnerBorder {
+        border-bottom: 1px solid turquoise;
+    }
+
+    .LeftSideWithRightBorder {
+        border-right: 1px solid darkcyan;
+        display: inline-block;
+        padding-right: 10px;
+    }
+
+    .LineHeight {
+    }
+
+    .Bold {
+        font-weight: bold;
+    }
+
+    .SmallPadding {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .RightSideDisplay {
+        padding-left: 10px;
+    }
+
+    #AddElementArea {
+        margin-top: 15px;
+    }
+
+    #InnerAddElementArea {
+        width: 250px;
+    }
+
+    .InlineBlock {
+    }
+
+    .FloatRight {
+        float: right;
+    }
+
+    .FloatNone {
+        float: none;
+    }
+    
+    .BiggerText
+    {
+        font-size: 15px;
+    }
+
+    .MobileFloatNone {
+        float: none;
+    }
+
+    .MobileTextBoxStretch {
+        width: 100%;
+    }
+
+    .MobileButtonAI {
+        margin: 15px 8px;
+    }
+
+    .MobileFloatLeft {
+        float: left;
+    }
+}
